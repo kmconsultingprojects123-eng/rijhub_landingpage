@@ -1,0 +1,94 @@
+/* Section badge/pill styling */
+.section-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #a2002614;
+  color: #a20025 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.8px!important;
+  border-radius: 20px!important;
+  text-transform: capitalize;
+  margin-bottom: 16px;
+  animation: badge-slide-down 0.6s ease-out;
+}
+
+@keyframes badge-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Hero image floating animation */
+.hero-image-animated {
+  max-width: 160%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: float-up 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-image-animated {
+    max-width: 120%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image-animated {
+    max-width: 100%;
+    animation: float-up 3s ease-in-out infinite;
+  }
+}
+
+/* Simplified Process section with parallax background */
+.feature-section-2 {
+  background-image: url('../img/hero/static_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-section-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.835);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .feature-section-2 {
+    background-attachment: scroll;
+  }
+}
+
